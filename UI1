@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Alarm UI</title>
+		<style>
+			:root {
+				--bg: #ffffff;
+				--soft-pink: #f1c4ff;
+				--neon-pink: #ff2bd6;
+				--pill-pink: #f7d2ff;
+				--pill-gray: #d9d9d9;
+				--text: #222222;
+			}
+
+			* {
+				box-sizing: border-box;
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+			}
+
+			body {
+				margin: 0;
+				min-height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: #f6f6f6;
+			}
+
+			.screen {
+				width: min(92vw, 860px);
+				aspect-ratio: 12 / 7.2;
+				background: var(--bg);
+				border: 6px solid var(--soft-pink);
+				border-radius: 34px;
+				padding: 28px 34px 26px;
+				display: grid;
+				grid-template-rows: 1fr auto;
+				box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+			}
+
+			.content {
+				display: grid;
+				grid-template-columns: auto 1fr;
+				align-items: center;
+				gap: 22px;
+				align-self: center;
+			}
+
+			.icon {
+				width: clamp(78px, 14vw, 120px);
+				height: clamp(78px, 14vw, 120px);
+			}
+
+			.time {
+				display: inline-flex;
+				align-items: baseline;
+				gap: 10px;
+				font-size: clamp(92px, 15.6vw, 180px);
+				font-weight: 600;
+				color: #111111;
+				letter-spacing: 0.5px;
+				line-height: 1;
+			}
+
+			.time .suffix {
+				font-size: 0.32em;
+				font-weight: 600;
+				letter-spacing: 0.5px;
+			}
+
+			.actions {
+				display: flex;
+				gap: 20px;
+				justify-content: center;
+				padding-bottom: 4px;
+			}
+
+			.btn {
+				border: none;
+				color: #111111;
+				padding: 12px 36px;
+				border-radius: 999px;
+				font-size: 18px;
+				font-weight: 600;
+				cursor: pointer;
+				transition: all 0.2s ease;
+				min-width: 160px;
+			}
+
+			.btn.snooze {
+				background: var(--pill-pink);
+			}
+
+			.btn.stop {
+				background: var(--pill-gray);
+			}
+
+			.btn.pressed {
+				border-color: var(--neon-pink);
+				background: var(--neon-pink);
+				color: #ffffff;
+				box-shadow: 0 0 16px rgba(255, 43, 214, 0.5);
+			}
+		</style>
+	</head>
+	<body>
+		<main class="screen" aria-label="Alarm screen">
+			<section class="content">
+				<svg class="icon" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+					<circle cx="60" cy="62" r="38" stroke="#111111" stroke-width="8" />
+					<line x1="60" y1="62" x2="60" y2="42" stroke="#111111" stroke-width="8" stroke-linecap="round" />
+					<line x1="60" y1="62" x2="76" y2="74" stroke="#111111" stroke-width="8" stroke-linecap="round" />
+					<line x1="28" y1="24" x2="40" y2="18" stroke="#111111" stroke-width="8" stroke-linecap="round" />
+					<line x1="92" y1="24" x2="80" y2="18" stroke="#111111" stroke-width="8" stroke-linecap="round" />
+					<line x1="38" y1="92" x2="28" y2="104" stroke="#111111" stroke-width="8" stroke-linecap="round" />
+					<line x1="82" y1="92" x2="92" y2="104" stroke="#111111" stroke-width="8" stroke-linecap="round" />
+				</svg>
+				<div class="time">7:00 <span class="suffix">am</span></div>
+			</section>
+			<section class="actions">
+				<button class="btn snooze" id="snoozeBtn" type="button">Snooze</button>
+				<button class="btn stop" id="stopBtn" type="button">Stop</button>
+			</section>
+		</main>
+
+		<script>
+			const snoozeBtn = document.getElementById("snoozeBtn");
+			const stopBtn = document.getElementById("stopBtn");
+
+			function flashButton(button) {
+				button.classList.add("pressed");
+				window.setTimeout(() => {
+					button.classList.remove("pressed");
+				}, 200);
+			}
+
+			snoozeBtn.addEventListener("click", () => flashButton(snoozeBtn));
+			stopBtn.addEventListener("click", () => flashButton(stopBtn));
+		</script>
+	</body>
+</html>
