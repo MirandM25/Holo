@@ -40,7 +40,7 @@
 				border-radius: 28px;
 				padding: 24px 20px 20px;
 				display: grid;
-				grid-template-rows: 1fr auto;
+				grid-template-rows: 1fr auto auto;
 				box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 			}
 
@@ -387,6 +387,238 @@
 				box-shadow: 0 6px 16px rgba(147, 51, 234, 0.4);
 				transform: scale(1.02);
 			}
+
+			.navbar {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				padding: 12px 0;
+				border-top: 2px solid #e5e7eb;
+				background: #ffffff;
+			}
+
+			.nav-icon {
+				width: 48px;
+				height: 48px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				transition: all 0.2s ease;
+				border-radius: 12px;
+				color: #6b7280;
+			}
+
+			.nav-icon:hover {
+				background: #eff6ff;
+				color: #2563eb;
+				transform: scale(1.1);
+			}
+
+			.nav-icon.active {
+				color: #2563eb;
+				background: #dbeafe;
+			}
+
+			.messages-section {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: #f0f4f8;
+				display: none;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				padding: 20px;
+				z-index: 999;
+				overflow-y: auto;
+			}
+
+			.messages-section.active {
+				display: flex;
+			}
+
+			.messages-container {
+				width: min(95vw, 360px);
+				max-height: 90vh;
+				background: #ffffff;
+				border: 3px solid #2563eb;
+				border-radius: 24px;
+				padding: 20px;
+				box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
+				overflow-y: auto;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.messages-header {
+				font-size: 24px;
+				font-weight: 700;
+				color: #2563eb;
+				text-align: center;
+				margin-bottom: 20px;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+			}
+
+			.message-item {
+				padding: 14px;
+				background: #eff6ff;
+				border: 2px solid #2563eb;
+				border-radius: 12px;
+				margin-bottom: 12px;
+				transition: all 0.2s ease;
+			}
+
+			.message-item:hover {
+				background: #dbeafe;
+				box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+			}
+
+			.message-sender {
+				font-weight: 700;
+				color: #2563eb;
+				margin-bottom: 4px;
+				font-size: 14px;
+			}
+
+			.message-text {
+				color: #1e40af;
+				font-size: 13px;
+			}
+
+			.gallery-section {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: #f0f4f8;
+				display: none;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				padding: 20px;
+				z-index: 999;
+				overflow-y: auto;
+			}
+
+			.gallery-section.active {
+				display: flex;
+			}
+
+			.gallery-container {
+				width: min(95vw, 360px);
+				max-height: 90vh;
+				background: #ffffff;
+				border: 3px solid #2563eb;
+				border-radius: 24px;
+				padding: 20px;
+				box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
+				overflow-y: auto;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.gallery-header {
+				font-size: 24px;
+				font-weight: 700;
+				color: #2563eb;
+				text-align: center;
+				margin-bottom: 20px;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+			}
+
+			.gallery-grid {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 20px;
+				margin: 30px 0;
+			}
+
+			.carousel-wrapper {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 20px;
+				width: 100%;
+			}
+
+			.carousel-nav {
+				background: #2563eb;
+				color: #ffffff;
+				border: none;
+				width: 44px;
+				height: 44px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				transition: all 0.2s ease;
+				font-size: 20px;
+				flex-shrink: 0;
+			}
+
+			.carousel-nav:hover {
+				background: #1d4ed8;
+				transform: scale(1.1);
+			}
+
+			.carousel-display {
+				width: 200px;
+				height: 200px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.carousel-item {
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(135deg, #2563eb, #9333ea);
+				border-radius: 12px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 80px;
+				box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+			}
+
+			.carousel-counter {
+				text-align: center;
+				color: #2563eb;
+				font-weight: 600;
+				font-size: 14px;
+				margin-top: 12px;
+			}
+
+			.close-nav {
+				margin-top: 20px;
+				padding: 12px 24px;
+				background: #9333ea;
+				color: #ffffff;
+				border: none;
+				border-radius: 999px;
+				font-size: 16px;
+				font-weight: 600;
+				cursor: pointer;
+				transition: all 0.2s ease;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				width: 100%;
+				box-shadow: 0 4px 12px rgba(147, 51, 234, 0.3);
+			}
+
+			.close-nav:hover {
+				background: #7e22ce;
+				box-shadow: 0 6px 16px rgba(147, 51, 234, 0.4);
+				transform: scale(1.02);
+			}
 		</style>
 	</head>
 	<body>
@@ -407,6 +639,26 @@
 				<button class="btn snooze" id="snoozeBtn" type="button">Snooze</button>
 				<button class="btn stop" id="stopBtn" type="button">Stop</button>
 			</section>
+			<nav class="navbar">
+				<div class="nav-icon" id="messagesIcon" title="Messages">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+					</svg>
+				</div>
+				<div class="nav-icon" id="workIcon" title="Work">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+						<path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
+					</svg>
+				</div>
+				<div class="nav-icon" id="pictureIcon" title="Pictures">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+						<circle cx="8.5" cy="8.5" r="1.5"></circle>
+						<polyline points="21 15 16 10 5 21"></polyline>
+					</svg>
+				</div>
+			</nav>
 		</main>
 
 		<section class="schedule-section" id="scheduleSection">
@@ -496,6 +748,44 @@
 			</div>
 		</section>
 
+		<section class="messages-section" id="messagesSection">
+			<div class="messages-container">
+				<div class="messages-header">💬 Messages</div>
+				<div class="message-item">
+					<div class="message-sender">Sarah Johnson</div>
+					<div class="message-text">Hey, did you see the update on the project?</div>
+				</div>
+				<div class="message-item">
+					<div class="message-sender">Mike Chen</div>
+					<div class="message-text">Meeting moved to 3 PM tomorrow</div>
+				</div>
+				<div class="message-item">
+					<div class="message-sender">Team Lead</div>
+					<div class="message-text">Great work on the presentation!</div>
+				</div>
+				<div class="message-item">
+					<div class="message-sender">Design Team</div>
+					<div class="message-text">Mockups are ready for review</div>
+				</div>
+				<button class="close-nav" id="closeMessagesBtn">Close</button>
+			</div>
+		</section>
+
+		<section class="gallery-section" id="gallerySection">
+			<div class="gallery-container">
+				<div class="gallery-header">🖼️ Gallery</div>
+				<div class="carousel-wrapper">
+					<button class="carousel-nav" id="carouselPrev">&#10094;</button>
+					<div class="carousel-display">
+						<div class="carousel-item" id="carouselImage">📸</div>
+					</div>
+					<button class="carousel-nav" id="carouselNext">&#10095;</button>
+				</div>
+				<div class="carousel-counter"><span id="carouselCount">1</span> / 9</div>
+				<button class="close-nav" id="closeGalleryBtn">Close</button>
+			</div>
+		</section>
+
 		<script>
 			const snoozeBtn = document.getElementById("snoozeBtn");
 			const stopBtn = document.getElementById("stopBtn");
@@ -503,6 +793,32 @@
 			const closeScheduleBtn = document.getElementById("closeScheduleBtn");
 			const todoSection = document.getElementById("todoSection");
 			const closeTodoBtn = document.getElementById("closeTodoBtn");
+			const messagesIcon = document.getElementById("messagesIcon");
+			const workIcon = document.getElementById("workIcon");
+			const pictureIcon = document.getElementById("pictureIcon");
+			const messagesSection = document.getElementById("messagesSection");
+			const gallerySection = document.getElementById("gallerySection");
+			const closeMessagesBtn = document.getElementById("closeMessagesBtn");
+			const closeGalleryBtn = document.getElementById("closeGalleryBtn");
+
+			// Carousel images
+			const carouselImages = ["📸", "🏆", "🎉", "🌟", "💼", "🎯", "✨", "🚀", "📱"];
+			let currentImageIndex = 0;
+
+			function updateCarousel() {
+				document.getElementById("carouselImage").textContent = carouselImages[currentImageIndex];
+				document.getElementById("carouselCount").textContent = currentImageIndex + 1;
+			}
+
+			document.getElementById("carouselNext").addEventListener("click", () => {
+				currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+				updateCarousel();
+			});
+
+			document.getElementById("carouselPrev").addEventListener("click", () => {
+				currentImageIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
+				updateCarousel();
+			});
 
 			function flashButton(button) {
 				button.classList.add("pressed");
@@ -511,9 +827,18 @@
 				}, 200);
 			}
 
+			function closeAllNavSections() {
+				messagesSection.classList.remove("active");
+				gallerySection.classList.remove("active");
+				scheduleSection.classList.remove("active");
+				todoSection.classList.remove("active");
+				document.querySelectorAll(".nav-icon").forEach(icon => icon.classList.remove("active"));
+			}
+
 			snoozeBtn.addEventListener("click", () => {
 				flashButton(snoozeBtn);
 				window.setTimeout(() => {
+					closeAllNavSections();
 					scheduleSection.classList.add("active");
 				}, 250);
 			});
@@ -524,11 +849,46 @@
 				scheduleSection.classList.remove("active");
 				setTimeout(() => {
 					todoSection.classList.add("active");
+					workIcon.classList.add("active");
 				}, 300);
 			});
 
 			closeTodoBtn.addEventListener("click", () => {
-				todoSection.classList.remove("active");
+				closeAllNavSections();
+			});
+
+			messagesIcon.addEventListener("click", () => {
+				if (messagesSection.classList.contains("active")) {
+					closeAllNavSections();
+				} else {
+					closeAllNavSections();
+					messagesSection.classList.add("active");
+					messagesIcon.classList.add("active");
+				}
+			});
+
+			workIcon.addEventListener("click", () => {
+				closeAllNavSections();
+				todoSection.classList.add("active");
+				workIcon.classList.add("active");
+			});
+
+			pictureIcon.addEventListener("click", () => {
+				if (gallerySection.classList.contains("active")) {
+					closeAllNavSections();
+				} else {
+					closeAllNavSections();
+					gallerySection.classList.add("active");
+					pictureIcon.classList.add("active");
+				}
+			});
+
+			closeMessagesBtn.addEventListener("click", () => {
+				closeAllNavSections();
+			});
+
+			closeGalleryBtn.addEventListener("click", () => {
+				closeAllNavSections();
 			});
 
 			// Handle checkbox clicks and add completed class to items
